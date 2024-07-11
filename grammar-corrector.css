@@ -1,0 +1,47 @@
+/* Styles for the grammar correction button */
+.grammar-correction-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .grammar-correction-button:hover {
+    background-color: #45a049;
+    transform: translateY(-50%) scale(1.05);
+  }
+  
+  .grammar-correction-button:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+  
+  /* Style for the wrapper div */
+  .grammar-correction-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Ensure the button doesn't interfere with text input */
+  input[type="text"],
+  textarea {
+    padding-right: 30px; /* Make room for the button */
+  }
+  
+  /* Make the button visible when input is focused */
+  .grammar-correction-wrapper:focus-within .grammar-correction-button {
+    display: flex;
+  }

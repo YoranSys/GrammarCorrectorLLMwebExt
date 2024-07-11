@@ -1,0 +1,54 @@
+{
+  "manifest_version": 2,
+  "name": "Grammar Corrector",
+  "version": "1.0",
+  "description": "Corrects grammar and orthography using an LLM API",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "mistralai-client.js",
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "grammar-button-class.js",
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.jpeg",
+      "48": "icon48.jpeg",
+      "128": "icon128.jpeg"
+    }
+  },
+  "icons": {
+    "16": "icon16.jpeg",
+    "19": "icon19.jpeg",
+    "48": "icon48.jpeg",
+    "128": "icon128.jpeg"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "test@gmail.com"
+  }
+  }
+}
