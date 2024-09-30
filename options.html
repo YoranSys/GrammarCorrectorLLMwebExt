@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Corrector Settings</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        label { display: block; margin-top: 10px; }
+        input[type="text"], input[type="radio"] { margin-bottom: 10px; }
+        button { margin-top: 20px; }
+    </style>
+</head>
 <body>
     <h1>Grammar Corrector Settings</h1>
-    <label for="apiKey">Mistral AI API Key:</label><br>
-    <input type="text" id="apiKey" name="apiKey"><br>
+
+    <div>
+        <label>
+            <input type="radio" name="apiChoice" value="mistralai" checked> Use MistralAI
+        </label>
+        <label>
+            <input type="radio" name="apiChoice" value="ollama"> Use Ollama
+        </label>
+    </div>
+
+    <div id="mistralaiSettings">
+        <label for="mistralApiKey">Mistral AI API Key:</label>
+        <input type="text" id="mistralApiKey" style="width: 100%;">
+    </div>
+
+    <div id="ollamaSettings" style="display: none;">
+        <label for="ollamaEndpoint">Ollama Endpoint:</label>
+        <input type="text" id="ollamaEndpoint" value="http://localhost:11434" style="width: 100%;">
+    </div>
+
     <button id="saveButton">Save</button>
+
     <script src="options.js"></script>
 </body>
 </html>

@@ -1,20 +1,23 @@
 {
   "manifest_version": 2,
   "name": "Grammar Corrector",
-  "version": "1.0",
-  "description": "Corrects grammar and orthography using an LLM API",
+  "version": "1.2",
+  "description": "Corrects grammar and orthography using MistralAI or Ollama API",
   "permissions": [
     "activeTab",
     "contextMenus",
     "storage",
-    "<all_urls>"
+    "<all_urls>",
+    "webRequest",
+    "webRequestBlocking",
+    "declarativeNetRequest"
   ],
   "background": {
     "scripts": [
       "mistralai-client.js",
       "background.js"
     ],
-    "persistent": false
+    "persistent": true
   },
   "content_scripts": [
     {
@@ -49,6 +52,6 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "test@gmail.com"
-  }
+    }
   }
 }
